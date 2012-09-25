@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Raider</title>
+<meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=0" />	
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link href="apple-touch-icon-57x57.png"
+              sizes="57x57"
+              rel="apple-touch-icon">
+        <link href="apple-touch-icon-72x72.png"
+              sizes="72x72"
+              rel="apple-touch-icon">
+			<link href="apple-touch-icon-114x114.png"
+              sizes="114x114"
+              rel="apple-touch-icon">
+        <link href="apple-touch-icon-144x144.png"
+              sizes="144x144"
+              rel="apple-touch-icon">			
+<link href="apple-touch-startup-image-portrait.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
+
+<link href="apple-touch-startup-image-landscape.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
+<style>
+canvas {
+    -webkit-tap-highlight-color: transparent;
+}
+</style>			
+<script>
+	function preventBehavior(e) {
+    e.preventDefault(); 
+};
+
+document.addEventListener("touchmove", preventBehavior, false);
+</script>	
+	
+	<style type="text/css">
+		html,body {
+			background-color: #212121;
+			color: #fff;
+			font-family: helvetica, arial, sans-serif;
+			margin: 5px;
+			padding: 0;
+			font-size: 12pt;
+		}
+		
+		#canvas {
+			border-radius: 6px;
+			padding: 0px;
+			position: absolute;
+			top:50px;
+			margin: auto;
+			left: 0;
+			right:0;
+			z-index: 1;
+			border: 6px solid #555;
+
+			
+		}
+		.buildMenu{
+			position: absolute;
+			border-radius: 6px;
+			border-top-left-radius: 0px;
+			border-bottom-left-radius: 0px;
+			padding: 5px;
+			width: 250px;
+			height: 733px;
+			top:50px;
+			margin: auto;
+			right:0;
+			left:1290px;
+			border: 6px solid #555;
+			z-index: 10;
+			
+		}
+		
+		.buildMenu, .title{
+			text-align: center;
+			font-size: 24px;
+		}
+		
+		#messages {
+			margin: auto;
+			height: 105px;
+			
+			margin-top: 5px;
+			width: 850px;
+			border: 1px solid #555;
+			padding-left:50px;
+			overflow: auto;
+			font-family: monospace, arial, sans-serif;
+			
+		}
+		
+		#messagesTitle {
+			margin: auto;
+			width: 890px;
+			
+			position:relative;
+			top: -105px;
+		}
+
+	</style>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>	
+	<script src="https://raw.github.com/mrdoob/stats.js/master/src/Stats.js"></script>	
+	<script src="lib/game/jgestures.js"></script>
+	<!--<script type="text/javascript" src="//schme16.github.com/jsCommons/jsCommons.js"></script>!-->
+	<script type="text/javascript" src="../../Libs/jsCommons/jsCommons.js"></script>
+	<script type="text/javascript" src="lib/game/map.js"></script>
+	<script type="text/javascript" src="lib/game/player.js"></script>	
+	<script type="text/javascript" src="lib/game/socket.io.js"></script>
+	<script type="text/javascript" src="lib/game/network.js"></script>
+	<script type="text/javascript" src="lib/game/sha256.js"></script>
+
+	<script type="text/javascript" src="lib/impact/impact.js"></script>
+	<script type="text/javascript" src="lib/game/main.js"></script>
+
+</head>
+<body onload="document.ontouchmove = function(e) {e.preventDefault()};">
+	<div class="output" style="float:left;">Debug:</div>
+	<div class="buildMenu">
+		<div class=".title">Menu</div>
+	</div>
+	<div align="center"><canvas id="canvas"></canvas></div>
+
+</body>
+</html>
